@@ -1,11 +1,26 @@
 const mongoose = require('mongoose')
 
 let bookSchema = mongoose.Schema({
-    isbn: String,
-    title: String,
-    author: String,
-    category: String,
-    stock: Number
+    isbn: {
+        type: String,
+        required: [true, 'isbn cannot be empty']
+    },
+    title: {
+        type: String,
+        required: [true, 'title cannot be empty']
+    },
+    author: {
+        type: String,
+        required: [true, 'author cannot be empty']
+    },
+    category: {
+        type: String,
+        required: [true, 'category cannot be empty']
+    },
+    stock: {
+        type: Number,
+        required: [true, 'stock cannot be empty']
+    }
 },{
     timestamps: true
 })
